@@ -14,6 +14,11 @@
 		10E189B22B14A19C00B24440 /* StandupsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E189B12B14A19C00B24440 /* StandupsTests.swift */; };
 		10E189BC2B14A19C00B24440 /* StandupsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E189BB2B14A19C00B24440 /* StandupsUITests.swift */; };
 		10E189BE2B14A19C00B24440 /* StandupsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E189BD2B14A19C00B24440 /* StandupsUITestsLaunchTests.swift */; };
+		10E189CC2B14A2E500B24440 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 10E189CB2B14A2E500B24440 /* ComposableArchitecture */; };
+		10E189D02B14A3B100B24440 /* StandupsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E189CF2B14A3B100B24440 /* StandupsListView.swift */; };
+		10E189D22B14A4A400B24440 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E189D12B14A4A400B24440 /* Models.swift */; };
+		10E189D42B14A91F00B24440 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E189D32B14A91F00B24440 /* CardView.swift */; };
+		10E189D62B14ABD100B24440 /* StandupFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E189D52B14ABD100B24440 /* StandupFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,10 @@
 		10E189B72B14A19C00B24440 /* StandupsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StandupsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E189BB2B14A19C00B24440 /* StandupsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupsUITests.swift; sourceTree = "<group>"; };
 		10E189BD2B14A19C00B24440 /* StandupsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		10E189CF2B14A3B100B24440 /* StandupsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupsListView.swift; sourceTree = "<group>"; };
+		10E189D12B14A4A400B24440 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		10E189D32B14A91F00B24440 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		10E189D52B14ABD100B24440 /* StandupFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandupFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10E189CC2B14A2E500B24440 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +108,10 @@
 				10E189A22B14A19B00B24440 /* ContentView.swift */,
 				10E189A42B14A19B00B24440 /* Assets.xcassets */,
 				10E189A62B14A19B00B24440 /* Preview Content */,
+				10E189CF2B14A3B100B24440 /* StandupsListView.swift */,
+				10E189D12B14A4A400B24440 /* Models.swift */,
+				10E189D32B14A91F00B24440 /* CardView.swift */,
+				10E189D52B14ABD100B24440 /* StandupFormView.swift */,
 			);
 			path = Standups;
 			sourceTree = "<group>";
@@ -143,6 +157,9 @@
 			dependencies = (
 			);
 			name = Standups;
+			packageProductDependencies = (
+				10E189CB2B14A2E500B24440 /* ComposableArchitecture */,
+			);
 			productName = Standups;
 			productReference = 10E1899D2B14A19B00B24440 /* Standups.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +232,9 @@
 				Base,
 			);
 			mainGroup = 10E189942B14A19B00B24440;
+			packageReferences = (
+				10E189CA2B14A2E500B24440 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 10E1899E2B14A19B00B24440 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10E189D62B14ABD100B24440 /* StandupFormView.swift in Sources */,
+				10E189D02B14A3B100B24440 /* StandupsListView.swift in Sources */,
 				10E189A32B14A19B00B24440 /* ContentView.swift in Sources */,
 				10E189A12B14A19B00B24440 /* StandupsApp.swift in Sources */,
+				10E189D22B14A4A400B24440 /* Models.swift in Sources */,
+				10E189D42B14A91F00B24440 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +462,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samarthpaboowal.Standups;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -467,6 +492,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samarthpaboowal.Standups;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -588,6 +614,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		10E189CA2B14A2E500B24440 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = exactVersion;
+				version = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		10E189CB2B14A2E500B24440 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10E189CA2B14A2E500B24440 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 10E189952B14A19B00B24440 /* Project object */;
 }
