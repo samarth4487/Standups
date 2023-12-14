@@ -25,12 +25,14 @@ struct StandupFormFeature: Reducer {
         case binding(BindingAction<State>)
     }
     
+    @Dependency(\.uuid) var uuid
+    
     var body: some ReducerOf<Self> {
         BindingReducer()
         Reduce { state, action in
             switch action {
             case .addAttendeeButtonTapped:
-                let attendee = Attendee(id: UUID())
+                let attendee = Attendee(id: uuid())
                 state.standup.attendees.append(attendee)
                 state.focus = .attendee(attendee.id)
                 return .none
@@ -47,12 +49,14 @@ struct StandupFormFeature: Reducer {
 
 struct StandupFormView: View {
     let store: StoreOf<StandupFormFeature>
+    @FocusState var focus: StandupFormFeature.State.Field?
     
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             Form {
                 Section {
                     TextField("Title", text: viewStore.$standup.title)
+                        .focused($focus, equals: .title)
                     HStack {
                         Slider(value: viewStore.$standup.duration.minutes, in: 5...30, step: 1) {
                             Text("Length")
@@ -67,12 +71,23 @@ struct StandupFormView: View {
                 
                 Section {
                     ForEach(viewStore.$standup.attendees) { $attendee in
-                        TextField("Name", text: $attendee)
+                        TextField("Name", text: $attendee.name)
+                            .focused($focus, equals: .attendee(attendee.id))
                     }
+                    .onDelete(perform: { indexSet in
+                        viewStore.send(.deleteAttendees(atOffsets: indexSet))
+                    })
+                    Button {
+                        viewStore.send(.addAttendeeButtonTapped)
+                    } label: {
+                        Text("Add attendee")
+                    }
+
                 } header: {
                     Text("Attendees")
                 }
             }
+            .bind(viewStore.$focus, to: $focus)
         }
     }
 }
